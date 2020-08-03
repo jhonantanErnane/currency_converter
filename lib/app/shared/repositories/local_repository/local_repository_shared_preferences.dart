@@ -22,10 +22,10 @@ class LocalRepositorySharedPreferences {
   Future<String> getThemeChoiced() async {
     await _getInstance();
     try {
-      return _preferences.getString('EnumTheme');
+      return _preferences.getString('EnumTheme') ?? EnumTheme.LIGHTTHEME.toString();
     } catch (e) {
       print(e);
-      return null;
+      return EnumTheme.LIGHTTHEME.toString();
     }
   }
 }

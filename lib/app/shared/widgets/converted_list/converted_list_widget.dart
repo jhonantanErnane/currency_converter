@@ -46,15 +46,18 @@ class ConvertedListWidget extends StatelessWidget {
               context: context,
               items: [
                 PopupMenuItem(
-                  child: FlatButton(
-                    child: Text(
-                      "Excluir",
-                      style: TextStyle(fontSize: 16),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: FlatButton(
+                      child: Text(
+                        "Excluir",
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      onPressed: () {
+                        Modular.to.pop();
+                        _showDialog(converted, context);
+                      },
                     ),
-                    onPressed: () {
-                      Modular.to.pop();
-                      _showDialog(converted, context);
-                    },
                   ),
                 ),
               ],
